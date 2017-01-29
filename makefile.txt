@@ -1,0 +1,26 @@
+INPUTFILE=input.txt
+OUTPUTFILE=TSPBButput.txt
+JFLAGS = -g
+JC = javac
+RM=rm
+VI=vi
+JVM=java
+NODE=Node
+IC=IntegerComparator
+MAIN = AssignmentP1
+.SUFFIXES: .java .class
+.java.class:
+	$(JC) $*.java
+	$(JVM) $(MAIN) $(INPUTFILE) $(OUTPUTFILE)
+	$(RM) $(MAIN).class
+	$(RM) $(NODE).class
+	$(RM) $(IC).class
+	$(VI) $(OUTPUTFILE)
+
+CLASSES = \
+	AssignmentP1.java \
+
+classes: $(CLASSES:.java=.class)
+
+default : class
+
